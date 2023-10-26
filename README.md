@@ -84,15 +84,15 @@ The first step is to unzip or download the example project folder into a directo
 1. Open Anaconda Prompt and go to the project's folder.
 2. Run the following command in the Anaconda Prompt application to create a Conda environment named *CFS* for the project.
     ``` bash
-    (base) $>conda create --name CFS python=3.9
+    (base) $>conda create --name ESG python=3.10
     ```
 3. Once the environment is created, activate a Conda *CFS* environment with this command in Anaconda Prompt.
     ``` bash
-    (base) $>conda activate CFS
+    (base) $>conda activate ESG
     ```
 4. Run the following command to the dependencies in the *CFS* environment 
     ``` bash
-    (CFS) $>pip install -r requirements.txt
+    (ESG) $>pip install -r requirements.txt
     ```
 5. Once the dependencies installation process is success, create a ```.env``` file with the following content
     ``` INI
@@ -102,11 +102,39 @@ The first step is to unzip or download the example project folder into a directo
     ```
 5. Then run the following command to start the Jupyter Lab application.
     ``` bash
-    (CFS) $>jupyter lab
+    (ESG) $>jupyter lab
     ```
-6. Open a ```Greenrevenue-BULK.ipynb``` or ```Greenrevenue-BULK-CSV.ipynb``` file and run each cell to learn the workflow step by step.
+6. Open a ```ESG-BULK_requests.ipynb``` file and run each cell to learn the workflow step by step.
 
-    ![figure-1](images/02_green_revenue_notebook.png "Greenrevenue-BULK.ipynb notebook file")
+    ![figure-1](images/02_esg_notebook.png "ESG-BULK_requests.ipynb notebook file")
+
+## <a id="postman_example"></a>Run the Postman application
+
+1. Download the RDP Postman collection from the [Refinitiv Data Platform APIs download](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis) page.
+
+    ![figure-2](images/03_rdp_postman.png "download Postman RDP collection")
+
+2. Unzip and import the *latest* collection file (*RDP.postman_collection_20230926.json* as of October 2023) to the Postman application.
+3. Click on the *RDP* collection, then click the *Variables* tab and input your RDP Credential.
+
+    ![figure-3](images/04_rdp_postman.png "set up RDP credential")
+
+4. The first step is run the "Get Access Token using Password Grant (Machine ID)" request under the Authentication folder.
+
+    ![figure-4](images/05_rdp_auth.png "run RDP Authen request")
+
+5. Please note that you can generate the Python code from this Postman request by clicking the ```</>``` button and choose Python.
+
+    ![figure-5](images/06_rdp_auth_code.png "generate RDP Authen request Python code")
+
+6. Once the Once authentication is successful, run the requests under "CFS/CFS-ESG Bulk folder"
+    
+    ![figure-6](images/07_rdp_esg.png "run RDP ESG Bulk request")
+
+5. Like the Authentication request, you can generate the Python code from this Postman request by clicking the ```</>``` button as well.
+
+    ![figure-7](images/08_rdp_esg_code.png "generate RDP ESG Bulk request Python code")
+
 
 ## <a id="references"></a>References
 
