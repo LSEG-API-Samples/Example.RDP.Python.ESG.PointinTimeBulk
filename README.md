@@ -1,4 +1,4 @@
-# RDP APIs ESG CFS Bulk file Workflow
+# RDP APIs ESG Point in Time CFS Bulk file Workflow
 - version: 1.0.0
 - Last update: Oct 2023
 - Environment: Jupyter Notebook
@@ -9,15 +9,15 @@ ALL EXAMPLE CODE IS PROVIDED ON AN “AS IS” AND “AS AVAILABLE” BASIS FOR 
 
 ## <a id="intro"></a>Introduction
 
-This demo application shows the workflow of the Refinitiv Data Platform (RDP) CFS Bulk API Feed for the ESG data. I am demonstrating the workflow in [Python](https://www.python.org/) and [Jupyter](https://jupyter.org/) environment. However, the RDP APIs are the web-based API that any programming langues can connect and consume data from via the HTTP RESTful API. 
+This demo application shows the workflow of the Refinitiv Data Platform (RDP) CFS Bulk API Feed for the ESG Point in Time data. I am demonstrating the workflow in [Python](https://www.python.org/) and [Jupyter](https://jupyter.org/) environment. However, the RDP APIs are the web-based API that any programming langues can connect and consume data from via the HTTP RESTful API. 
 
 ## <a id="prerequisite"></a>Prerequisite
 
 Before I am going further, there is some prerequisite, dependencies, and libraries that the project is needed.
 
-### Access to the RDP with the Green Revenues Bulk file permission
+### Access to the RDP with the ESG Bulk file permission
 
-This project uses RDP access credentials with the Green Revenues Bulk file permission.
+This project uses RDP access credentials with the ESG Bulk file permission.
 
 Please contact your Refinitiv representative to help you with the RTO account and services.
 
@@ -49,31 +49,30 @@ For more detail regarding the Refinitiv Data Platform, please see the following 
 - [Quick Start](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/quick-start) page.
 - [Tutorials](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/tutorials) page.
 
-## <a id="whatis_rdp"></a>About the ESG Filesets.
+## <a id="whatis_rdp"></a>About the ESG Point in Time Filesets.
 
-Each week updates to the ESG data are delivered to Refinitiv Data Platform (RDP) calculation engine. Refinitiv Bulk files are distributed in both Jsonl and Csv format. Refinitiv Data Platform (RDP) uses UTF-8, Unicode character  set. 
-
-Refinitiv Bulk files are distributed in both Jsonl and Csv format. 
-
-One fileset is created containing all organizations and history. 
+Each week updates to the Environmental, Social and Governance (ESG) Point in time data are delivered to Refinitiv Data Platform (RDP). Refinitiv Bulk files are distributed in csv format, with the file extension .csv. 
 
 Two types of data updates are available. 
-* A full data fileset containing history for all organizations. 
-* A delta data fileset that contains only incremental changes to the universe since last week. 
 
-An incremental update is generated for each organization and period when there is a change to any value within that organization and period. 
+• A full set of csv data files containing all history for all data items and all organizations.
+• A delta csv data file that contains only incremental changes to the universe since last week. 
 
-The incremental update will contain all values for an organization and period, both the values that changed, and the values that  have remained the same. 
+### Full Initialization Files
+One zip file is created containing all organizations for one year of history. Both active and inactive organizations are included in 
+the data file. Each zip file contains a separate csv file for each organization
 
-Filesets are published each Sunday by 11 pm UTC. 
+### Delta Files
+An incremental update is generated for each value that has changed since last week. The incremental update will contain only 
+the values for an organization and period that have changed. Each zip file contains a single csv file containing all 
+created/modified or deleted data for all organizations.
 
-The Green Revenue files are zipped and delivered as .gz files. The following naming convention is used for the .gz filesets.
+ESG PIT Files are published each Monday by 9am UTC.
 
-For more detail regarding the Green Revenues Filesets, please see the following APIs resources: 
-- [RDP Green Revenue user guide](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/documentation#green-revenues-user-guide)
+The ESG csv files are zipped and delivered as .zip files.
 
-Note: Files will remain accessible for 4 weeks before being removed. The zipped files can be uncompressed using standard tools such as 7-zip.
-
+For more detail regarding the ESG Point in Time Filesets, please see the following APIs resources: 
+- [ESG Bulk - Point in Time User Guide](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/documentation#esg-bulk-point-in-time-user-guide)
 
 ## <a id="how_to_run"></a>How to run the demo application
 
@@ -104,11 +103,15 @@ The first step is to unzip or download the example project folder into a directo
     ``` bash
     (ESG) $>jupyter lab
     ```
-6. Open a ```ESG-BULK_requests.ipynb``` file and run each cell to learn the workflow step by step.
+6. Open a **ESG-BULK_PIT.ipynb**  file and run each cell to learn the ESG Point in Time workflow step by step.
 
-    ![figure-1](images/02_esg_notebook.png "ESG-BULK_requests.ipynb notebook file")
+    ![figure-1](images/02_esg_notebook.png "ESG-BULK_PIT.ipynb notebook file")
+
+7. Open a **ESG-BULK.ipynb**  file and run each cell to learn *a normal ESG* workflow step by step.
 
 ## <a id="postman_example"></a>Run the Postman application
+
+For a step-by-step tutorials, please check the [RDP Postman tutorials](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/tutorials#authorization-and-time-series-summary-bar-in-postman) page.
 
 1. Download the RDP Postman collection from the [Refinitiv Data Platform APIs download](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis) page.
 
@@ -135,6 +138,16 @@ The first step is to unzip or download the example project folder into a directo
 
     ![figure-7](images/08_rdp_esg_code.png "generate RDP ESG Bulk request Python code")
 
+## Next Steps
+
+You may interested in the following resources for more detail about the ESG data usage:
+- [Integrating ESG PiT Data to my StarMine Quant Model using AWS](https://developers.lseg.com/en/article-catalog/article/integrating-esp-pit-data-to-my-starmine-quant-model-using-aws)
+- [Find environmental footprint of your bond portfolio](https://developers.lseg.com/en/article-catalog/article/Environmental_footprint_of_bond_portfolio) article
+- [How to integrate ESG data into investment decisions](https://developers.lseg.com/en/article-catalog/article/how-integrate-esg-data-investment-decisions)
+- [Find out the ESG and Geographic exposure of a portfolio](https://developers.lseg.com/en/article-catalog/article/understand-and-analyze-your-portfolios-esg-exposure)
+- [Gathering aggregated ESG data on companies](https://developers.lseg.com/en/article-catalog/article/gathering-aggregated-esg-data-on-companies--esgbooleandata-pytho)
+
+And much more on the [Developer Portal](https://developers.lseg.com/en) website.
 
 ## <a id="references"></a>References
 
@@ -145,7 +158,8 @@ That brings me to the end of my unit test example project. For further details, 
 * [Refinitiv Data Platform APIs: Authorization - All about tokens](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/tutorials#authorization-all-about-tokens).
 * [Limitations and Guidelines for the RDP Authentication Service](https://developers.refinitiv.com/en/article-catalog/article/limitations-and-guidelines-for-the-rdp-authentication-service) article.
 * [Getting Started with Refinitiv Data Platform](https://developers.refinitiv.com/en/article-catalog/article/getting-start-with-refinitiv-data-platform) article.
-* [RDP CFS service (general) user guide](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/documentation#cfs-api-user-guide)
-* [RDP Green Revenue user guide](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/documentation#green-revenues-user-guide)
+* [ESG Data Guide](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/documentation#esg-data-guide)
+* [ESG-Bulk CFS API User Guide](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/documentation#esg-bulk-cfs-api-user-guide)
+* [ESG Bulk - Point in Time User Guide](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/documentation#esg-bulk-point-in-time-user-guide)
 
 For any questions related to Refinitiv Data Platform APIs, please use the [RDP APIs Forum](https://community.developers.refinitiv.com/spaces/231/index.html) on the [Developers Community Q&A page](https://community.developers.refinitiv.com/).
