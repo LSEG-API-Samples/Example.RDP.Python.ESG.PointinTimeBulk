@@ -1,6 +1,6 @@
 # RDP APIs ESG Point in Time CFS Bulk file Workflow
-- version: 1.0.0
-- Last update: Oct 2023
+- version: 2.0.0
+- Last update: Dec 2023
 - Environment: Jupyter Notebook
 - Prerequisite: [Access to RDP credentials](#prerequisite)
 
@@ -33,7 +33,7 @@ The Python [Anaconda](https://www.anaconda.com/distribution/) or [MiniConda](htt
 
 ## <a id="whatis_rdp"></a>What is Refinitiv Data Platform (RDP) APIs?
 
-The [Refinitiv Data Platform (RDP) APIs](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis) provide various Refinitiv data and content for developers via easy-to-use Web-based API.
+The [Refinitiv Data Platform (RDP) APIs](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis) provide various Refinitiv data and content for developers via easy-to-use Web-based API.
 
 RDP APIs give developers seamless and holistic access to all of the Refinitiv content such as Environmental Social and Governance (ESG), News, Research, etc, and commingled with their content, enriching, integrating, and distributing the data through a single interface, delivered wherever they need it.  The RDP APIs delivery mechanisms are the following:
 * Request - Response: RESTful web service (HTTP GET, POST, PUT or DELETE) 
@@ -46,8 +46,8 @@ This example project is focusing on the Request-Response: RESTful web service de
 ![figure-1](images/01_rdp.png "Refinitiv Data Platform content set")
 
 For more detail regarding the Refinitiv Data Platform, please see the following APIs resources: 
-- [Quick Start](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/quick-start) page.
-- [Tutorials](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/tutorials) page.
+- [Quick Start](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/quick-start) page.
+- [Tutorials](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/tutorials) page.
 
 ## <a id="whatis_rdp"></a>About the ESG Point in Time Filesets.
 
@@ -73,6 +73,12 @@ The ESG csv files are zipped and delivered as .zip files.
 
 For more detail regarding the ESG Point in Time Filesets, please see the following APIs resources: 
 - [ESG Bulk - Point in Time User Guide](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/documentation#esg-bulk-point-in-time-user-guide)
+
+## <a id="generic_workflow">The Generic Workflow of RDP CFS API application
+
+The RDP CFS API applications always have the same workflow for any Buckets (ESG, Symbology, Green Revenue, etc) and Package Ids. There is a generic workflow article available on the [A Step-By-Step Workflow Guide for RDP Client File Store (CFS) API](https://developers.lseg.com/en/article-catalog/article/a-step-by-step-workflow-guide-for-rdp-client-file-store--cfs--ap) page.
+
+A generic RDP CFS API Jupyter Notebook and Postman examples are available on [GitHub](https://github.com/LSEG-API-Samples/LSEG-API-Samples-Example.RDP.Python.GenericBulkFile.Workflow).
 
 ## <a id="how_to_run"></a>How to run the demo application
 
@@ -151,13 +157,13 @@ And much more on the [Developer Portal](https://developers.lseg.com/en) website.
 
 ## <a id="references"></a>References
 
-That brings me to the end of my unit test example project. For further details, please check out the following resources:
-* [Refinitiv Data Platform APIs page](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis) on the [Refinitiv Developer Community](https://developers.refinitiv.com/) website.
+That brings me to the end of my ESG CFS API workflow project. For further details, please check out the following resources:
+* [Refinitiv Data Platform APIs page](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis) on the [Refinitiv Developer Community](https://developers.lseg.com/) website.
 * [Refinitiv Data Platform APIs Playground page](https://api.refinitiv.com).
-* [Refinitiv Data Platform APIs: Introduction to the Request-Response API](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/tutorials#introduction-to-the-request-response-api).
-* [Refinitiv Data Platform APIs: Authorization - All about tokens](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/tutorials#authorization-all-about-tokens).
-* [Limitations and Guidelines for the RDP Authentication Service](https://developers.refinitiv.com/en/article-catalog/article/limitations-and-guidelines-for-the-rdp-authentication-service) article.
-* [Getting Started with Refinitiv Data Platform](https://developers.refinitiv.com/en/article-catalog/article/getting-start-with-refinitiv-data-platform) article.
+* [Refinitiv Data Platform APIs: Introduction to the Request-Response API](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/tutorials#introduction-to-the-request-response-api).
+* [Refinitiv Data Platform APIs: Authorization - All about tokens](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/tutorials#authorization-all-about-tokens).
+* [Limitations and Guidelines for the RDP Authentication Service](https://developers.lseg.com/en/article-catalog/article/limitations-and-guidelines-for-the-rdp-authentication-service) article.
+* [Getting Started with Refinitiv Data Platform](https://developers.lseg.com/en/article-catalog/article/getting-start-with-refinitiv-data-platform) article.
 * [ESG Data Guide](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/documentation#esg-data-guide)
 * [ESG-Bulk CFS API User Guide](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/documentation#esg-bulk-cfs-api-user-guide)
 * [ESG Bulk - Point in Time User Guide](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/documentation#esg-bulk-point-in-time-user-guide)
